@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.12'
+- '4.0'
+- '5.0'
+- '6.0'
+after_success: bash <(curl -s https://codecov.io/bash)
+deploy:
+  - provider: npm
+    email: tituswormer@gmail.com
+    api_key:
+      secure: UgbmspNvg7tzDaUu8jbGfkPM2oJSmWgn6WdL3HsULaCzwUJT+apdqiruaottX5UTRwnf3Z1mx1egGKT5jcF1Lb8uX76tJZJGfpaRC+6742TSGDrEZKzoEGDV08JeuqPJnz1xrUs+K//Av+V9yKsAAcG9reny90Z0A05J7mwdrOMxZY4AMqI0Dh4qLJXpi++KXOqes2RS8gfsjmGt+rJIajqyTuhLB8GoDJNTWx5dqq5ol/GELgW6CY5pZn6Wago8fym509i5cmWFigjsVlGNRNFX2FnBTU7IJ86WI6WjzbNhCNbX/EGr1vsgkV4IMFG3sQshPzHrKKGdTI3kdUlObZ0XoNyMioNOMBuz7aFNjDQDr2jbBjVhaeHr2IJARAiDfxCiaBESBzSEb9gXcCyNvA3RPasD1JuFGxrWAHrwQ3Yi1jCaATPz81YPFtOpsEdwyOP0A50DarM+pj8OEZUJBHyFe9m12w0Pmb1G/xM36kGljhXXInns0GWjZ/Y2Kj/xC5NX5HKQI0pYLKzPFf2h/1MUlYJQB1eGVL0kBI0BVmr5B3cylgPwCDMMWobJwgZzZqrctk3W9owXThnk9aBftil7rWkJdtUin/Yggz6i6OKx5GAZvAESTmwynM+jKwjDTyjdniiL+uNSbLuSzMupzPoH7m8Rlv4AIsS4E2ZlWeQ=
+    on:
+      tags: true
+      node: '5.0'
+  - provider: releases
+    api_key:
+      secure: XboLRp7W76kHZRDv7TPlB6WQkcE7pWkaWSCem0TkEPXbHmypUEmg3J8UdWqBkI7j1x5mKu4wifTofH42hjamyN8bXj+7JB3e8y1I2QXRpPmFO+CrfcnaCSyyd7RT9SmyqKTg1jQuOP/1GAFKmzppwt/iiv3hqNJcpQjkZdU5yY2aAEMRI168LC8iIRsvoaqZbakAtQErVaIcWTRZPMaqKepkRQHKZljR1CBUPGQRwrk5Rl+hXr/8U0vQ55/PyZKm0T2wqpijsS0yyJznmoClpJQORmowv1pf6Jw4CZrLnumtYZBweqjRhYaA4mNRwKFCwnED3s+hln3FMS9hq/We9IM2vbDkbn3qYSxUJiHD1BZBkeexk/G6a8oas/qvvvA8YoEDui53udTRvGBr2odV0V7TR4wiKNjhoWpT9cvWQnwUpYHXdJmRqOVJUJULCx44NhjpYMFUFl9PAfB3nzTkIvLSb/8jNVTYrMuZAH+wvbDIZS6gSWBCB6v3IGxXqFGWR42utTYSWWdrWeVznFkyLFlukAxGt8pW2CXHk/LL1xd4uc4Hejbv7hfwRqgDL/av2JO4HTQeaZGMniWMrqn3/zlNemMeZZhjudxPh5tccL27q2irtDwmwEslpQM1HReFOTd302zwyvDXvJrA0Fmjul7256Fb3wnk3ZzuiH1/5pg=
+    file:
+      - "state-toggle.js"
+      - "state-toggle.min.js"
+    on:
+      tags: true
+      node: '6.0'
