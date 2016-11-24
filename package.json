@@ -21,17 +21,14 @@
   "devDependencies": {
     "browserify": "^13.0.1",
     "esmangle": "^1.0.1",
-    "nyc": "^7.0.0",
-    "remark-cli": "^1.0.0",
-    "remark-comment-config": "^4.0.0",
-    "remark-github": "^5.0.0",
-    "remark-lint": "^4.0.0",
-    "remark-validate-links": "^4.0.0",
+    "nyc": "^10.0.0",
+    "remark-cli": "^2.1.0",
+    "remark-preset-wooorm": "^1.0.0",
     "tape": "^4.0.0",
-    "xo": "^0.16.0"
+    "xo": "^0.17.1"
   },
   "scripts": {
-    "build-md": "remark . --quiet --frail",
+    "build-md": "remark . -qfo",
     "build-bundle": "browserify index.js --bare -s stateToggle > state-toggle.js",
     "build-mangle": "esmangle < state-toggle.js > state-toggle.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
@@ -43,8 +40,7 @@
   "xo": {
     "space": true,
     "ignores": [
-      "state-toggle.js",
-      "state-toggle.min.js"
+      "state-toggle.js"
     ]
   },
   "nyc": {
@@ -54,15 +50,6 @@
     "branches": 100
   },
   "remarkConfig": {
-    "output": true,
-    "plugins": [
-      "comment-config",
-      "github",
-      "lint",
-      "validate-links"
-    ],
-    "settings": {
-      "bullet": "*"
-    }
+    "presets": "wooorm"
   }
 }
