@@ -1,20 +1,8 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module state-toggle
- * @fileoverview Test suite for `state-toggle`.
- */
-
 'use strict';
 
-/* eslint-env node */
-
-/* Dependencies. */
 var test = require('tape');
 var toggle = require('./');
 
-/* Tests. */
 test('toggle()', function (t) {
   t.test('no context object', function (st) {
     var ctx = {on: false};
