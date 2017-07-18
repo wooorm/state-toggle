@@ -1,12 +1,10 @@
 # state-toggle [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-<!--lint disable heading-increment no-duplicate-headings-->
-
 Enter/exit a state.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install state-toggle
@@ -72,7 +70,7 @@ Exit the state, reverting `key` to the value it had before entering.
 
 [codecov]: https://codecov.io/github/wooorm/state-toggle
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
