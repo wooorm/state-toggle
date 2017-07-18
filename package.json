@@ -8,22 +8,22 @@
     "exit",
     "state"
   ],
-  "files": [
-    "index.js"
-  ],
   "repository": "https://github.com/wooorm/state-toggle",
   "bugs": "https://github.com/wooorm/state-toggle/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
   ],
+  "files": [
+    "index.js"
+  ],
   "dependencies": {},
   "devDependencies": {
     "browserify": "^14.1.0",
     "esmangle": "^1.0.1",
-    "nyc": "^10.0.0",
+    "nyc": "^11.0.0",
     "remark-cli": "^3.0.0",
-    "remark-preset-wooorm": "^2.0.0",
+    "remark-preset-wooorm": "^3.0.0",
     "tape": "^4.0.0",
     "xo": "^0.18.0"
   },
@@ -51,6 +51,8 @@
     "branches": 100
   },
   "remarkConfig": {
-    "plugins": ["preset-wooorm"]
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
