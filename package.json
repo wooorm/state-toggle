@@ -8,7 +8,7 @@
     "exit",
     "state"
   ],
-  "repository": "https://github.com/wooorm/state-toggle",
+  "repository": "wooorm/state-toggle",
   "bugs": "https://github.com/wooorm/state-toggle/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
