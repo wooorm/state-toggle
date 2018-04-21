@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var toggle = require('./');
+var toggle = require('.');
 
 test('toggle()', function (t) {
   t.test('no context object', function (st) {

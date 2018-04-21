@@ -19,13 +19,13 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^14.1.0",
+    "browserify": "^16.0.0",
     "esmangle": "^1.0.1",
     "nyc": "^11.0.0",
-    "remark-cli": "^3.0.0",
-    "remark-preset-wooorm": "^3.0.0",
+    "remark-cli": "^5.0.0",
+    "remark-preset-wooorm": "^4.0.0",
     "tape": "^4.0.0",
-    "xo": "^0.18.0"
+    "xo": "^0.20.0"
   },
   "scripts": {
     "build-md": "remark . -qfo",
@@ -40,8 +40,17 @@
   "xo": {
     "space": true,
     "esnext": false,
+    "rules": {
+      "no-var": "off",
+      "prefer-arrow-callback": "off"
+    },
     "ignores": [
       "state-toggle.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
     ]
   },
   "nyc": {
@@ -49,10 +58,5 @@
     "lines": 100,
     "functions": 100,
     "branches": 100
-  },
-  "remarkConfig": {
-    "plugins": [
-      "preset-wooorm"
-    ]
   }
 }
