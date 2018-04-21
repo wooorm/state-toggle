@@ -5,3 +5,4 @@ coverage/
 node_modules/
 state-toggle.js
 state-toggle.min.js
+yarn.lock
