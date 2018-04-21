@@ -1,10 +1,11 @@
 language: node_js
 node_js:
-- '4.0'
-- '8.0'
+- lts/boron
+- node
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: XboLRp7W76kHZRDv7TPlB6WQkcE7pWkaWSCem0TkEPXbHmypUEmg3J8UdWqBkI7j1x5mKu4wifTofH42hjamyN8bXj+7JB3e8y1I2QXRpPmFO+CrfcnaCSyyd7RT9SmyqKTg1jQuOP/1GAFKmzppwt/iiv3hqNJcpQjkZdU5yY2aAEMRI168LC8iIRsvoaqZbakAtQErVaIcWTRZPMaqKepkRQHKZljR1CBUPGQRwrk5Rl+hXr/8U0vQ55/PyZKm0T2wqpijsS0yyJznmoClpJQORmowv1pf6Jw4CZrLnumtYZBweqjRhYaA4mNRwKFCwnED3s+hln3FMS9hq/We9IM2vbDkbn3qYSxUJiHD1BZBkeexk/G6a8oas/qvvvA8YoEDui53udTRvGBr2odV0V7TR4wiKNjhoWpT9cvWQnwUpYHXdJmRqOVJUJULCx44NhjpYMFUFl9PAfB3nzTkIvLSb/8jNVTYrMuZAH+wvbDIZS6gSWBCB6v3IGxXqFGWR42utTYSWWdrWeVznFkyLFlukAxGt8pW2CXHk/LL1xd4uc4Hejbv7hfwRqgDL/av2JO4HTQeaZGMniWMrqn3/zlNemMeZZhjudxPh5tccL27q2irtDwmwEslpQM1HReFOTd302zwyvDXvJrA0Fmjul7256Fb3wnk3ZzuiH1/5pg=
   file:
@@ -12,4 +13,3 @@ deploy:
     - "state-toggle.min.js"
   on:
     tags: true
-    node: '8.0'
