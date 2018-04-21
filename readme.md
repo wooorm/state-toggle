@@ -13,18 +13,19 @@ npm install state-toggle
 ## Usage
 
 ```javascript
-var toggle = require('state-toggle');
-var ctx = {on: false};
-var enter = toggle('on', ctx.on, ctx);
-var exit;
+var toggle = require('state-toggle')
+
+var ctx = {on: false}
+var enter = toggle('on', ctx.on, ctx)
+var exit
 
 // Entering:
-exit = enter();
-console.log(ctx.on); // true
+exit = enter()
+console.log(ctx.on) // => true
 
 // Exiting:
-exit();
-console.log(ctx.on); // false
+exit()
+console.log(ctx.on) // => false
 ```
 
 ## API

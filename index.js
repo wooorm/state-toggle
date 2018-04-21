@@ -1,23 +1,23 @@
-'use strict';
+'use strict'
 
-module.exports = factory;
+module.exports = factory
 
 /* Construct a state `toggler`: a function which inverses
  * `property` in context based on its current value.
  * The by `toggler` returned function restores that value. */
 function factory(key, state, ctx) {
-  return enter;
+  return enter
 
   function enter() {
-    var context = ctx || this;
-    var current = context[key];
+    var context = ctx || this
+    var current = context[key]
 
-    context[key] = !state;
+    context[key] = !state
 
-    return exit;
+    return exit
 
     function exit() {
-      context[key] = current;
+      context[key] = current
     }
   }
 }
