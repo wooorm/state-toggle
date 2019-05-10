@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: XmbFc9K6+s4+D/iKhIr4WDccMVJzaGtzCopoeYiypGV0ehcOv55pD4gyVPfEKMr8ate4acxg1iGPboUcCy9c2TlQvKoRq7vcD/D8eumgaKxbNJLBphIYCwiqx6thVQzNXL0wUNDTkXkMiXQYfASyA7eZVlDDHgdsYg5r8kPCv7P5p7Y5KpawM1jnd12Qe/0muOe5DSnjbdx+m0LlbOu3uaRFa1N0/aolsErcYHAqAUfha2nJjB0aXuOJjZrsGRDZr81HrNKokikhxfYPzBf/nitZHSLA6rIvHopA2QwyHJYWiMFiGKOq5zSjIfOAQQOtOPIugR/4ujb4jMQQ2ZRZSFjPvUTr6ku2Fmlz2XRUOVT3aTMIJKosCvALMdljaTjlKUfOO3Yd7KAlzAGt/ODmtA7CNvg9dSLEuG7R7Dy9zErvXqoskl+QWMuce5AJwPAP5pB7+/RT+JCjltphqmu+3PJwOjUzTwGn20WSsZuRFcOIb/Xsksh/mkFNil5KbCW8LejBQ+JFYDnzE59YlXPRsE08fudJwYpbvWZvP5KyGtUARcSRXmngRIvzpUQHmJAne4APQZR7UMOmDNXDZ1ZvYqsvEdRlX9HahgNQ2kXDAJYRLK+t/M5YV+vmEqJCNKgD0/0r9kX3ZufvfscjH/c1oTryokOF5Ns8up+ltriesaM=
+    secure: KrWUmt6oXQ1QPg6A+cz6VEnqdif7EP/U5vH7f2zTC08jIJFcOS5KLNMdNaNuz1C5L48B8aziTtyDY+fZYRGSpU/nqRy+U4hI9XNuo1IcO/FkaLzPBAPObyFwU7Xc/lQ5Z2NWnaRcuG0/NJ5aCteRQce4BehiGyO5N1AFHEjEpFyiVvlreeN1fUhF0v1zUBUo+dg3N1v+g4TmEGPsxtV3+qkn2HkYjdTF3icX6s1WcbUbuXb8VDkM1JMqIcgfZY6IhtAe0/eQ+h5TtgvMmiE2htGOjoBbAGMTjx7kVzdGpcLznSMbD3UqewpcZzc0m3Niwhqf9mNMr0au39bzVS7fZ/KlRj6nV3Dhb+aQV4EqDGWqBd+yEvVuYC5HL8e0RKoEz7YPkZkTozY7ooihn8EPTSA9EURMJo7mKDRDgXOb1E4XMnID6Wia2O3cZrGy0PioWkMNmmilWLOTJt5k56VUrR//LuQTpvo0AqPeSpeeW7d7w7GlrXxswil5Lsm/wEmGCT7AbTDzMohgdlE3QBZQeBcsOLSLvvpNRVQ1xKEUdp7gvwY8SrmgqSttqmfnvgz8q1LOAbOpMpLKq/yR9VmLpLnM73dLgNUt4cWynxaVAfVcEhkNH9EuW5ZEGdoKQkdCMRtqEefMl/dxs1mE370RnmOdpMc0uVpblGs+Od+hvU8=
   file:
-    - "state-toggle.js"
-    - "state-toggle.min.js"
+    - 'state-toggle.js'
+    - 'state-toggle.min.js'
   on:
     tags: true
