@@ -75,7 +75,7 @@ Exit the state, reverting `key` to the value it had before entering.
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
 [enter]: #enter
 
