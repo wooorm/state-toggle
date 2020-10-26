@@ -3,8 +3,8 @@
 var test = require('tape')
 var toggle = require('.')
 
-test('toggle()', function(t) {
-  t.test('no context object', function(st) {
+test('toggle()', function (t) {
+  t.test('no context object', function (st) {
     var ctx = {on: false}
     var exit
 
@@ -19,7 +19,7 @@ test('toggle()', function(t) {
     st.end()
   })
 
-  t.test('context object', function(st) {
+  t.test('context object', function (st) {
     var ctx = {on: false}
     var enter = toggle('on', ctx.on, ctx)
     var exit
@@ -33,7 +33,7 @@ test('toggle()', function(t) {
     st.end()
   })
 
-  t.test('initial state', function(st) {
+  t.test('initial state', function (st) {
     var ctx = {on: 1}
     var enter = toggle('on', false, ctx)
     var exit
@@ -47,7 +47,7 @@ test('toggle()', function(t) {
     st.end()
   })
 
-  t.test('multiple state', function(st) {
+  t.test('multiple state', function (st) {
     var ctx = {on: false}
     var enter = toggle('on', ctx.on, ctx)
     var exitA
