@@ -68,9 +68,9 @@ Exit the state, reverting `key` to the value it had before entering.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/state-toggle.svg
+[build-badge]: https://github.com/wooorm/state-toggle/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/state-toggle
+[build]: https://github.com/wooorm/state-toggle/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/state-toggle.svg
 
