@@ -5,14 +5,15 @@
  *
  * @param {string} key
  * @param {boolean} state
- * @param {*} ctx
- * @returns {() => Function}
+ * @param {Record<string, any>} [ctx]
+ * @returns {() => () => void}
  */
 export function stateToggle(key, state, ctx) {
   return enter
 
   /**
    * Bound enter function to set `state` as `key` on `ctx`.
+   * @this {Record<string, any>}
    * @returns {() => void}
    */
   function enter() {
