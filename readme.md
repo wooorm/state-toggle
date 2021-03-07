@@ -18,10 +18,10 @@ npm install state-toggle
 ## Use
 
 ```js
-var toggle = require('state-toggle')
+import {stateToggle} from 'state-toggle'
 
 var ctx = {on: false}
-var enter = toggle('on', ctx.on, ctx)
+var enter = stateToggle('on', ctx.on, ctx)
 var exit
 
 // Entering:
@@ -34,6 +34,9 @@ console.log(ctx.on) // => false
 ```
 
 ## API
+
+`state-toggle` exports the following identifier: `stateToggle`.
+There is no default export.
 
 ### `toggle(key, initial[, ctx])`
 

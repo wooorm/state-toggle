@@ -1,14 +1,12 @@
-'use strict'
+import test from 'tape'
+import {stateToggle} from './index.js'
 
-var test = require('tape')
-var toggle = require('.')
-
-test('toggle()', function (t) {
+test('stateToggle()', function (t) {
   t.test('no context object', function (t) {
     var ctx = {on: false}
     var exit
 
-    ctx.enter = toggle('on', ctx.on)
+    ctx.enter = stateToggle('on', ctx.on)
 
     t.equal(ctx.on, false, 'should start off')
     exit = ctx.enter()
@@ -21,7 +19,7 @@ test('toggle()', function (t) {
 
   t.test('context object', function (t) {
     var ctx = {on: false}
-    var enter = toggle('on', ctx.on, ctx)
+    var enter = stateToggle('on', ctx.on, ctx)
     var exit
 
     t.equal(ctx.on, false, 'should start off')
@@ -35,7 +33,7 @@ test('toggle()', function (t) {
 
   t.test('initial state', function (t) {
     var ctx = {on: 1}
-    var enter = toggle('on', false, ctx)
+    var enter = stateToggle('on', false, ctx)
     var exit
 
     t.equal(ctx.on, 1, 'should start on the initial state')
@@ -49,7 +47,7 @@ test('toggle()', function (t) {
 
   t.test('multiple state', function (t) {
     var ctx = {on: false}
-    var enter = toggle('on', ctx.on, ctx)
+    var enter = stateToggle('on', ctx.on, ctx)
     var exitA
     var exitB
 
