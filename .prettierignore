@@ -1,5 +1,2 @@
 coverage/
-state-toggle.js
-state-toggle.min.js
-*.json
 *.md
