@@ -1,9 +1,20 @@
-// Construct a state `toggler`: a function which inverses `property` in context
-// based on its current value.
-// The by `toggler` returned function restores that value.
+/**
+ * Create a toggle, which when entering toggles `key` on `ctx` (or `this`, if `ctx`
+ * is not given) to `!initial`, and when exiting, sets `key` on the context back to
+ * the value it had before entering.
+ *
+ * @param {string} key
+ * @param {boolean} state
+ * @param {*} ctx
+ * @returns {() => Function}
+ */
 export function stateToggle(key, state, ctx) {
   return enter
 
+  /**
+   * Bound enter function to set `state` as `key` on `ctx`.
+   * @returns {() => void}
+   */
   function enter() {
     var context = ctx || this
     var current = context[key]
@@ -12,6 +23,9 @@ export function stateToggle(key, state, ctx) {
 
     return exit
 
+    /**
+     * Configured exit function to revert setting `state` as `key` on `ctx`.
+     */
     function exit() {
       context[key] = current
     }
