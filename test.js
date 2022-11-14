@@ -1,8 +1,13 @@
+/**
+ * @typedef {import('./index.js').Enter} Enter
+ */
+
 import test from 'tape'
 import {stateToggle} from './index.js'
 
 test('stateToggle()', function (t) {
   t.test('no context object', function (t) {
+    /** @type {{on: boolean, enter?: Enter}} */
     const ctx = {on: false}
 
     ctx.enter = stateToggle('on', ctx.on)
