@@ -1,72 +1,12 @@
 # state-toggle
 
-[![Build][build-badge]][build]
-[![Coverage][coverage-badge]][coverage]
-[![Downloads][downloads-badge]][downloads]
-[![Size][size-badge]][size]
+**Stability: Legacy**.
+This package is no longer recommended for use.
+It’s still covered by semantic-versioning guarantees and not yet deprecated, but
+use of this package should be avoided.
+Please write some better code for yourself!
 
-Enter/exit a state.
-
-## Install
-
-This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
-instead of `require`d.
-
-[npm][]:
-
-```sh
-npm install state-toggle
-```
-
-## Use
-
-```js
-import {stateToggle} from 'state-toggle'
-
-var ctx = {on: false}
-var enter = stateToggle('on', ctx.on, ctx)
-var exit
-
-// Entering:
-exit = enter()
-console.log(ctx.on) // => true
-
-// Exiting:
-exit()
-console.log(ctx.on) // => false
-```
-
-## API
-
-This package exports the following identifiers: `stateToggle`.
-There is no default export.
-
-### `toggle(key, initial[, ctx])`
-
-Create a toggle, which when entering toggles `key` on `ctx` (or `this`, if `ctx`
-is not given) to `!initial`, and when exiting, sets `key` on the context back to
-the value it had before entering.
-
-###### Returns
-
-`Function` — [`enter`][enter].
-
-### `enter()`
-
-Enter the state.
-
-###### Context
-
-If no `ctx` was given to `toggle`, the context object (`this`) of `enter()` is
-used to toggle.
-
-###### Returns
-
-`Function` — [`exit`][exit].
-
-### `exit()`
-
-Exit the state, reverting `key` to the value it had before entering.
+Legacy [documentation for this package][docs] is still available in Git.
 
 ## License
 
@@ -74,28 +14,8 @@ Exit the state, reverting `key` to the value it had before entering.
 
 <!-- Definitions -->
 
-[build-badge]: https://github.com/wooorm/state-toggle/workflows/main/badge.svg
-
-[build]: https://github.com/wooorm/state-toggle/actions
-
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/state-toggle.svg
-
-[coverage]: https://codecov.io/github/wooorm/state-toggle
-
-[downloads-badge]: https://img.shields.io/npm/dm/state-toggle.svg
-
-[downloads]: https://www.npmjs.com/package/state-toggle
-
-[size-badge]: https://img.shields.io/bundlephobia/minzip/state-toggle.svg
-
-[size]: https://bundlephobia.com/result?p=state-toggle
-
-[npm]: https://docs.npmjs.com/cli/install
-
 [license]: license
 
 [author]: https://wooorm.com
 
-[enter]: #enter
-
-[exit]: #exit
+[docs]: https://github.com/wooorm/state-toggle/tree/063d450
