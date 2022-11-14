@@ -3,13 +3,12 @@ import {stateToggle} from './index.js'
 
 test('stateToggle()', function (t) {
   t.test('no context object', function (t) {
-    var ctx = {on: false}
-    var exit
+    const ctx = {on: false}
 
     ctx.enter = stateToggle('on', ctx.on)
 
     t.equal(ctx.on, false, 'should start off')
-    exit = ctx.enter()
+    const exit = ctx.enter()
     t.equal(ctx.on, true, 'should toggle on')
     exit()
     t.equal(ctx.on, false, 'should revert')
@@ -18,12 +17,11 @@ test('stateToggle()', function (t) {
   })
 
   t.test('context object', function (t) {
-    var ctx = {on: false}
-    var enter = stateToggle('on', ctx.on, ctx)
-    var exit
+    const ctx = {on: false}
+    const enter = stateToggle('on', ctx.on, ctx)
 
     t.equal(ctx.on, false, 'should start off')
-    exit = enter()
+    const exit = enter()
     t.equal(ctx.on, true, 'should toggle on')
     exit()
     t.equal(ctx.on, false, 'should revert')
@@ -32,12 +30,11 @@ test('stateToggle()', function (t) {
   })
 
   t.test('initial state', function (t) {
-    var ctx = {on: 1}
-    var enter = stateToggle('on', false, ctx)
-    var exit
+    const ctx = {on: 1}
+    const enter = stateToggle('on', false, ctx)
 
     t.equal(ctx.on, 1, 'should start on the initial state')
-    exit = enter()
+    const exit = enter()
     t.equal(ctx.on, true, 'should toggle on')
     exit()
     t.equal(ctx.on, 1, 'should revert')
@@ -46,16 +43,14 @@ test('stateToggle()', function (t) {
   })
 
   t.test('multiple state', function (t) {
-    var ctx = {on: false}
-    var enter = stateToggle('on', ctx.on, ctx)
-    var exitA
-    var exitB
+    const ctx = {on: false}
+    const enter = stateToggle('on', ctx.on, ctx)
 
     t.equal(ctx.on, false, 'should start on the initial state')
 
-    exitA = enter()
+    const exitA = enter()
     t.equal(ctx.on, true, 'should toggle on')
-    exitB = enter()
+    const exitB = enter()
     t.equal(ctx.on, true, 'should not toggle again')
 
     exitB()

@@ -17,8 +17,8 @@ export function stateToggle(key, state, ctx) {
    * @returns {() => void}
    */
   function enter() {
-    var context = ctx || this
-    var current = context[key]
+    const context = ctx || this
+    const current = context[key]
 
     context[key] = !state
 
