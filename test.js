@@ -2,69 +2,60 @@
  * @typedef {import('./index.js').Enter} Enter
  */
 
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {stateToggle} from './index.js'
 
-test('stateToggle()', function (t) {
-  t.test('no context object', function (t) {
+test('stateToggle()', async function (t) {
+  await t.test('no context object', function () {
     /** @type {{on: boolean, enter?: Enter}} */
     const ctx = {on: false}
 
     ctx.enter = stateToggle('on', ctx.on)
 
-    t.equal(ctx.on, false, 'should start off')
+    assert.equal(ctx.on, false, 'should start off')
     const exit = ctx.enter()
-    t.equal(ctx.on, true, 'should toggle on')
+    assert.equal(ctx.on, true, 'should toggle on')
     exit()
-    t.equal(ctx.on, false, 'should revert')
-
-    t.end()
+    assert.equal(ctx.on, false, 'should revert')
   })
 
-  t.test('context object', function (t) {
+  await t.test('context object', function () {
     const ctx = {on: false}
     const enter = stateToggle('on', ctx.on, ctx)
 
-    t.equal(ctx.on, false, 'should start off')
+    assert.equal(ctx.on, false, 'should start off')
     const exit = enter()
-    t.equal(ctx.on, true, 'should toggle on')
+    assert.equal(ctx.on, true, 'should toggle on')
     exit()
-    t.equal(ctx.on, false, 'should revert')
-
-    t.end()
+    assert.equal(ctx.on, false, 'should revert')
   })
 
-  t.test('initial state', function (t) {
+  await t.test('initial state', function () {
     const ctx = {on: 1}
     const enter = stateToggle('on', false, ctx)
 
-    t.equal(ctx.on, 1, 'should start on the initial state')
+    assert.equal(ctx.on, 1, 'should start on the initial state')
     const exit = enter()
-    t.equal(ctx.on, true, 'should toggle on')
+    assert.equal(ctx.on, true, 'should toggle on')
     exit()
-    t.equal(ctx.on, 1, 'should revert')
-
-    t.end()
+    assert.equal(ctx.on, 1, 'should revert')
   })
 
-  t.test('multiple state', function (t) {
+  await t.test('multiple state', function () {
     const ctx = {on: false}
     const enter = stateToggle('on', ctx.on, ctx)
 
-    t.equal(ctx.on, false, 'should start on the initial state')
+    assert.equal(ctx.on, false, 'should start on the initial state')
 
     const exitA = enter()
-    t.equal(ctx.on, true, 'should toggle on')
+    assert.equal(ctx.on, true, 'should toggle on')
     const exitB = enter()
-    t.equal(ctx.on, true, 'should not toggle again')
+    assert.equal(ctx.on, true, 'should not toggle again')
 
     exitB()
-    t.equal(ctx.on, true, 'should not revert when nested')
+    assert.equal(ctx.on, true, 'should not revert when nested')
     exitA()
-    t.equal(ctx.on, false, 'should revert when not nested')
-
-    t.end()
+    assert.equal(ctx.on, false, 'should revert when not nested')
   })
-
-  t.end()
 })
